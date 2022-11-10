@@ -1,5 +1,6 @@
-package com.kodilla.testing.collection;
+package com.kodilla.testing.forum.shape.collection;
 
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
@@ -54,18 +55,32 @@ class CollectionTestSuite {
         oddNumbersList.add(7);
         oddNumbersList.add(9);
 
-        List<Integer> evenNumbersList = new ArrayList<>();
-        evenNumbersList.add(0);
-        evenNumbersList.add(2);
-        evenNumbersList.add(4);
-        evenNumbersList.add(6);
-        evenNumbersList.add(8);
+        //When
+        List<Integer> resultList = oddNumbersExterminator.exterminate(oddNumbersList);
+        System.out.println("Testing odd numbers list");
+
+        //Then
+        Assertions.assertEquals(0, resultList.size());
+    }
+
+    @Test
+    void testOddNumbersExterminator() {
+
+        //Given
+        List<Integer> oddNumbersList = new ArrayList<>();
+        oddNumbersList.add(1);
+        oddNumbersList.add(2);
+        oddNumbersList.add(3);
+        oddNumbersList.add(5);
+        oddNumbersList.add(7);
+        oddNumbersList.add(9);
 
         //When
         List<Integer> resultList = oddNumbersExterminator.exterminate(oddNumbersList);
         System.out.println("Testing odd numbers list");
 
         //Then
-        Assertions.assertNotEquals(evenNumbersList, resultList);
+        Assertions.assertEquals(1, resultList.size());
+        Assertions.assertEquals(2, resultList.get(0));
     }
 }

@@ -73,6 +73,7 @@ public class ShapeCollectorTestSuite {
 
             //Then
             Assertions.assertNotNull(shape);
+            Assertions.assertEquals("Circle", shape.getShapeName());
         }
     }
 }
