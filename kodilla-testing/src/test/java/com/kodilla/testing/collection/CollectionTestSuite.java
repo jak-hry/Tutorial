@@ -47,27 +47,25 @@ class CollectionTestSuite {
     void testOddNumbersExterminatorNormalList() {
 
         //Given
-        List<Integer> normalList = new ArrayList<>();
-        normalList.add(1);
-        normalList.add(3);
-        normalList.add(5);
-        normalList.add(7);
-        normalList.add(9);
+        List<Integer> oddNumbersList = new ArrayList<>();
+        oddNumbersList.add(1);
+        oddNumbersList.add(3);
+        oddNumbersList.add(5);
+        oddNumbersList.add(7);
+        oddNumbersList.add(9);
 
-        List<Integer> expectedList = new ArrayList<>();
-        expectedList.add(0);
-        expectedList.add(2);
-        expectedList.add(4);
-        expectedList.add(6);
-        expectedList.add(8);
+        List<Integer> evenNumbersList = new ArrayList<>();
+        evenNumbersList.add(0);
+        evenNumbersList.add(2);
+        evenNumbersList.add(4);
+        evenNumbersList.add(6);
+        evenNumbersList.add(8);
 
         //When
-        List<Integer> resultList = oddNumbersExterminator.exterminate(normalList);
+        List<Integer> resultList = oddNumbersExterminator.exterminate(oddNumbersList);
         System.out.println("Testing odd numbers list");
 
         //Then
-        Assertions.assertNotEquals(expectedList, resultList);
-
+        Assertions.assertNotEquals(evenNumbersList, resultList);
     }
-
 }
