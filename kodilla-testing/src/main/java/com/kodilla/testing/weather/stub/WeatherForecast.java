@@ -29,23 +29,23 @@ public class WeatherForecast {
         for (Double temperature : temperatures.getTemperatures().values()) {
             resultOfAverage += temperature;
         }
-        return resultOfAverage / (double) averageTemp.size();
+        return resultOfAverage / averageTemp.size();
     }
 
     public double calculateAverageMedianTemperature(Map<String, Double> averageMedianTemp) {
         List<Double> result = new ArrayList<>();
 
-        for (Map.Entry<String, Double> temperature : averageMedianTemp.entrySet()) {
+        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
             result.add(temperature.getValue());
         }
 
         Collections.sort(result);
-        double median;
+        double median = 0.0;
 
         if (result.size() % 2 != 0) {
             median = result.get(result.size() / 2);
         } else {
-            median = (result.get(result.size() / 2)) + (result.get(result.size() / 2 - 1));
+            median = (result.get(result.size() / 2) + result.get(result.size() / 2 - 1)) / 2;
         }
 
         return median;
