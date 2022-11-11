@@ -29,7 +29,7 @@ public class ShapeCollection {
         }
     }
 
-    public int getSize(){
+    public int getSize() {
         return shapes.size();
     }
 }
