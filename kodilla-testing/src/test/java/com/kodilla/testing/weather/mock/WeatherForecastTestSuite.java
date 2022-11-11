@@ -100,7 +100,7 @@ public class WeatherForecastTestSuite {
         double averageMedianTemperatures = weatherForecast.calculateAverageMedianTemperature(medianTemperaturesMock.getTemperatures());
 
         //Then
-        Assertions.assertEquals(25.350, averageMedianTemperatures);
+        Assertions.assertEquals(25.35, averageMedianTemperatures);
     }
 }
 
