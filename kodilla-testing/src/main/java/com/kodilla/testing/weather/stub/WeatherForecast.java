@@ -29,7 +29,7 @@ public class WeatherForecast {
         for (Double temperature : temperatures.getTemperatures().values()) {
             resultOfAverage += temperature;
         }
-        return resultOfAverage / averageTemp.size();
+        return resultOfAverage / temperatures.getTemperatures().size();
     }
 
     public double calculateAverageMedianTemperature(Map<String, Double> averageMedianTemp) {
