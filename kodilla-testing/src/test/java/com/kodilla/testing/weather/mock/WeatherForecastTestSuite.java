@@ -52,7 +52,7 @@ public class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        double averageTemperatures = weatherForecast.calculateAverageTemperature(temperaturesMock.getTemperatures());
+        double averageTemperatures = weatherForecast.calculateAverageTemperature();
 
         //Then
         Assertions.assertEquals(25.56, averageTemperatures);
@@ -74,7 +74,7 @@ public class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        double averageMedianTemperatures = weatherForecast.calculateAverageMedianTemperature(temperaturesMock.getTemperatures());
+        double averageMedianTemperatures = weatherForecast.calculateAverageMedianTemperature();
 
         //Then
         Assertions.assertEquals(25.5, averageMedianTemperatures);
@@ -97,7 +97,7 @@ public class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(medianTemperaturesMock);
 
         //When
-        double averageMedianTemperatures = weatherForecast.calculateAverageMedianTemperature(medianTemperaturesMock.getTemperatures());
+        double averageMedianTemperatures = weatherForecast.calculateAverageMedianTemperature();
 
         //Then
         Assertions.assertEquals(25.35, averageMedianTemperatures);
