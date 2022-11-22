@@ -177,9 +177,6 @@ public class BoardTestSuite {
             var tasksQty = project.getTaskLists().stream()
                     .filter(inProgressTasks::contains)
                     .flatMap(tl -> tl.getTasks().stream())
-                    .map(Task::getCreated)
-                    .map(t -> ChronoUnit.DAYS.between(t, LocalDate.now()))
-                    .map(n -> 1)
                     .count();
 
             var avg = project.getTaskLists().stream()
