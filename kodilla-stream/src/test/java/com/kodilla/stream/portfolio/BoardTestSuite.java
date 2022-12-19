@@ -11,6 +11,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BoardTestSuite {
 
@@ -192,6 +193,13 @@ public class BoardTestSuite {
             assertEquals(30, sumOfDays);
             assertEquals(3, tasksQty);
             assertEquals(expectedAverage, avg);
+        }
+
+        @Test
+        void testRemoveTask(){
+
+
+
         }
     }
 }
