@@ -16,7 +16,11 @@ public class FlightSearch {
         flightsMap.put("Roma", true);
 
         if (flightsMap.containsKey(flight.getArrivalAirport()) && flightsMap.containsKey(flight.getDepartureAirport())) {
-            return true;
+            if (flightsMap.get(flight.getArrivalAirport()) && flightsMap.get(flight.getDepartureAirport())) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             throw new RouteNotFoundException("Arrival or departure from the airport is not available");
         }
