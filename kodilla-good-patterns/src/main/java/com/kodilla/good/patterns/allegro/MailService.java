@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.allegro;
 
 public class MailService {
 
-    public static void sendMail(User user){
-        System.out.println("Thanks " + user + " for purchase!");
+    public void sendMail(User user, Product product) {
+        System.out.println("Thanks " + user + " for order! - \"" + product + "\"");
     }
 }

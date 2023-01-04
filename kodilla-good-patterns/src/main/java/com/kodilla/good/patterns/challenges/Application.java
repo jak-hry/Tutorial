@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ public class Application {
         Map<String, List<String>> movies = movieStore.getMovies();
 
         String movie = movies.values().stream()
-                .map(s -> s.toString())
+                .flatMap(Collection::stream)
                 .collect(joining(" ! "));
         System.out.println(movie);
 
