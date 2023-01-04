@@ -1,12 +1,12 @@
 package com.kodilla.good.patterns.allegro;
 
-public class BuyDTo {
+public class BuyDto {
 
     private final User user;
     private final boolean isInStock;
     private final Product product;
 
-    public BuyDTo(final User user, final Product product, final boolean isInStock) {
+    public BuyDto(final User user, final Product product, final boolean isInStock) {
         this.user = user;
         this.product = product;
         this.isInStock = isInStock;
