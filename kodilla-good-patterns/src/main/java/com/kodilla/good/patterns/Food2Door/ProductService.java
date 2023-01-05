@@ -20,6 +20,7 @@ public class ProductService {
         boolean check = productCheck.productCheck(customer, product);
 
         if (check) {
+            producer.process();
             boolean isInStock = orderRepository.productOrder(customer, product);
             if (isInStock) {
                 telephoneService.sendSms(customer);
@@ -31,6 +32,8 @@ public class ProductService {
         } else {
             return new OrderDto(customer, product, false);
         }
+
+
     }
 
     public void process(OrderRequest orderRequest) {

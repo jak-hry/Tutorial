@@ -20,7 +20,7 @@ public class ExtraFoodShop implements Producer {
     }
 
     public boolean process() {
-        System.out.println("The order has been fulfilled");
+        System.out.println("the order is in progress");
         return true;
     }
 }

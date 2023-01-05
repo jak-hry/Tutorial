@@ -20,7 +20,7 @@ public class HealthyShop implements Producer {
     }
 
     public boolean process() {
-        System.out.println("The order has been fulfilled");
+        System.out.println("order in progress");
         return true;
     }
 }

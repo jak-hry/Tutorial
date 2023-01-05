@@ -20,7 +20,7 @@ public class GlutenFreeShop implements Producer {
     }
 
     public boolean process(){
-        System.out.println("The order has been fulfilled");
+        System.out.println("the order is currently being processed");
         return true;
     }
 }
