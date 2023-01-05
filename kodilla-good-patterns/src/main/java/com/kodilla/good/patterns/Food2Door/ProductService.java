@@ -32,12 +32,5 @@ public class ProductService {
         } else {
             return new OrderDto(customer, product, false);
         }
-
-
-    }
-
-    public void process(OrderRequest orderRequest) {
-
-        orderRequest.process();
     }
 }
