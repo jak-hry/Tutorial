@@ -12,7 +12,7 @@ public class LoadOrder {
             return new HealthyShop(healthyShop.getProduct(), healthyShop.getQuantity());
         } else {
             System.out.println("not for sale");
-           return extraFoodShop;
+            return extraFoodShop;
         }
 
     }
