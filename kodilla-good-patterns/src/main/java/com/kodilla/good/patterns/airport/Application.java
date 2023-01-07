@@ -9,7 +9,7 @@ public class Application {
         Flight flight = new Flight();
         HashSet<Airport> list2 = flight.getRouteList();
         FlightService flightService = new FlightService();
-        flightService.findFlightsFromAGivenCity(list2, "Gdynia");
-        flightService.findFlightsToAGivenCity(list2, "Krakow");
+        flightService.searchFrom(list2, "Gdynia");
+        flightService.searchTo(list2, "Krakow");
     }
 }

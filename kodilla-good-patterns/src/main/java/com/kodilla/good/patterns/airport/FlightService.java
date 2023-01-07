@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class FlightService {
 
-    public void findFlightsFromAGivenCity(HashSet<Airport> list, String airportName) {
+    public void searchFrom(HashSet<Airport> list, String airportName) {
 
         list.stream()
                 .filter(route -> route.getAirportNameFrom().equals(airportName))
@@ -12,7 +12,7 @@ public class FlightService {
 
     }
 
-    public void findFlightsToAGivenCity(HashSet<Airport> list, String airportName) {
+    public void searchTo(HashSet<Airport> list, String airportName) {
 
         list.stream()
                 .filter(route -> route.getAirportNameTo().equals(airportName))
