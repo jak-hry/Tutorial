@@ -33,7 +33,7 @@ public class FlightService {
             Airport airport = new Airport(airportNameTo, anotherCity);
             list.add(airport);
             System.out.println("flight from \"" + airportNameFrom +
-                    "\" through \"" + anotherCity + "\" to \"" + airportNameTo + "\"");
+                    "\" through \"" + airportNameTo + "\" to \"" + anotherCity + "\"");
         }
     }
 }
