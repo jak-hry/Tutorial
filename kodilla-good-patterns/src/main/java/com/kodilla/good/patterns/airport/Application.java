@@ -11,6 +11,7 @@ public class Application {
         FlightService flightService = new FlightService();
         flightService.searchFrom(list2, "Gdansk");
         flightService.searchTo(list2, "Krakow");
-        flightService.searchThroughAnotherCity(list2, "Warszawa", "Wroclaw", "Poznan");
+        System.out.println();
+        flightService.searchThroughAnotherCity(list2, "Warszawa", "Poznan", "Wroclaw");
     }
 }
