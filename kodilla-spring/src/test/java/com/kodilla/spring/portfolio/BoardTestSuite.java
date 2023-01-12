@@ -16,12 +16,10 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
-
         //When
         board.getToDoList().addTask("task to do");
         board.getInProgressList().addTask("task in progress");
         board.getDoneList().addTask("task done");
-
         //Then
         assertEquals("task to do", board.getToDoList().getTasks().get(0));
         assertEquals("task in progress", board.getInProgressList().getTasks().get(0));
