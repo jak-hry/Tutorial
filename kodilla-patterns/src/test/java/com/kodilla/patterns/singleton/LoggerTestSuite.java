@@ -19,11 +19,13 @@ public class LoggerTestSuite {
 
         //Given
         //When
-        String fileName = "logger";
-        logger.log(fileName);
+        String fileName1 = "log1";
+        logger.log(fileName1);
+        String fileName2 = "log2";
+        logger.log(fileName2);
         String result = logger.getLastLog();
 
         //Then
-        assertEquals(result, fileName);
+        assertEquals(result, fileName2);
     }
 }
