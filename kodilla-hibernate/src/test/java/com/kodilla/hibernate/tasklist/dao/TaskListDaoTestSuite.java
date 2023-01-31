@@ -23,13 +23,13 @@ public class TaskListDaoTestSuite {
         String listName = "taskInProgress";
         TaskList taskList = new TaskList(listName, "17.2_Task");
         TaskList taskList2 = new TaskList(listName, "17.2_Tests");
-
-        //When
         taskListDao.save(taskList);
         taskListDao.save(taskList2);
 
-        //Then
+        //When
         List<TaskList> readTasks = taskListDao.findByListName(listName);
+
+        //Then
         assertEquals(2, readTasks.size());
         assertEquals(listName, readTasks.get(0).getListName());
         assertEquals(listName, readTasks.get(1).getListName());
