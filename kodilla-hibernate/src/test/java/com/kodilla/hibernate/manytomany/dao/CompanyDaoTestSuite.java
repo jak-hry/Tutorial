@@ -73,7 +73,6 @@ class CompanyDaoTestSuite {
         Employee employee2 = new Employee("Stephanie", "Clarckson");
         Employee employee3 = new Employee("Johny", "Kovalsky");
 
-        //When
         employeeDao.save(employee1);
         int employee1Id = employee1.getId();
         employeeDao.save(employee2);
@@ -81,6 +80,7 @@ class CompanyDaoTestSuite {
         employeeDao.save(employee3);
         int employee3Id = employee3.getId();
 
+        //When
         List<Employee> lastNameResult = employeeDao.findByLastName(employee1.getLastname());
 
         //Then
@@ -102,8 +102,6 @@ class CompanyDaoTestSuite {
         Company samsung = new Company("Samsung");
         Company apple = new Company("Apple");
         Company nokia = new Company("Nokia");
-
-        //When
         companyDao.save(samsung);
         int company1Id = samsung.getId();
         companyDao.save(apple);
@@ -111,7 +109,9 @@ class CompanyDaoTestSuite {
         companyDao.save(nokia);
         int company3Id = nokia.getId();
 
+        //When
         List<Company> resultCompanyList = companyDao.findACompanyByParameters("sam");
+
         //Then
         try {
             assertEquals(1, resultCompanyList.size());
