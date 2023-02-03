@@ -6,6 +6,16 @@ import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.findACompanyByParameters",
+                query = """
+                        SELECT * FROM COMPANIES
+                        WHERE SUBSTRING(Company_name, 1, 3) = :NAME
+                        """,
+                resultClass = Company.class
+        )
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

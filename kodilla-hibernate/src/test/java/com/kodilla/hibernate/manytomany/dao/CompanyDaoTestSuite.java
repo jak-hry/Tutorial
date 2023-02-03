@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
@@ -13,6 +16,8 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -51,12 +56,70 @@ class CompanyDaoTestSuite {
         assertNotEquals(0, greyMatterId);
 
         //CleanUp
-//        try {
-//            companyDao.deleteById(softwareMachineId);
-//            companyDao.deleteById(dataMaestersId);
-//            companyDao.deleteById(greyMatterId);
-//        } catch (Exception e) {
-//            //do nothing
-//        }
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
+    }
+
+    @Test
+    void testFindEmployeeByLastName() {
+
+        //Given
+        Employee employee1 = new Employee("Bob", "Myle");
+        Employee employee2 = new Employee("Stephanie", "Clarckson");
+        Employee employee3 = new Employee("Johny", "Kovalsky");
+
+        //When
+        employeeDao.save(employee1);
+        int employee1Id = employee1.getId();
+        employeeDao.save(employee2);
+        int employee2Id = employee2.getId();
+        employeeDao.save(employee3);
+        int employee3Id = employee3.getId();
+
+        List<Employee> lastNameResult = employeeDao.findByLastName(employee1.getLastname());
+
+        //Then
+        try {
+            assertEquals(1, lastNameResult.size());
+        } finally {
+            //CleanUp
+            employeeDao.deleteById(employee1Id);
+            employeeDao.deleteById(employee2Id);
+            employeeDao.deleteById(employee3Id);
+
+        }
+    }
+
+    @Test
+    void fingACompanyByParameters() {
+
+        //Given
+        Company samsung = new Company("Samsung");
+        Company apple = new Company("Apple");
+        Company nokia = new Company("Nokia");
+
+        //When
+        companyDao.save(samsung);
+        int company1Id = samsung.getId();
+        companyDao.save(apple);
+        int company2Id = apple.getId();
+        companyDao.save(nokia);
+        int company3Id = nokia.getId();
+
+        List<Company> resultCompanyList = companyDao.findACompanyByParameters("sam");
+        //Then
+        try {
+            assertEquals(1, resultCompanyList.size());
+        } finally {
+            //CleanUp
+            companyDao.deleteById(company1Id);
+            companyDao.deleteById(company2Id);
+            companyDao.deleteById(company3Id);
+        }
     }
 }
