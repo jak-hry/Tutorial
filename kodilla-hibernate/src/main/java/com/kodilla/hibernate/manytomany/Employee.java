@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedQueries({
+        @NamedQuery(name = "Employee.findByLastName", query = "FROM Employee WHERE lastname = :LASTNAME"),
         @NamedQuery(
-                name = "Employee.findByLastName",
-                query = "FROM Employee WHERE lastname = :LASTNAME"
+                name = "Employee.findByLastNameFragment",
+                query = "FROM Employee WHERE lastname LIKE :ARG"
         )
 })
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
