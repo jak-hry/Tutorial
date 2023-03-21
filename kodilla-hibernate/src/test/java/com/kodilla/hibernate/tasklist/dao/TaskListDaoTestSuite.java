@@ -65,9 +65,11 @@ public class TaskListDaoTestSuite {
         int id = taskList.getId();
 
         //Then
-        assertNotEquals(0, id);
-
-        //CleanUp
-        taskListDao.deleteById(id);
+        try {
+            assertNotEquals(0, id);
+        } finally {
+            //CleanUp
+            taskListDao.deleteById(id);
+        }
     }
 }
