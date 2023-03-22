@@ -75,7 +75,7 @@ public class TaskDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        //taskDao.deleteById(id);
+        taskDao.deleteById(id);
     }
 
     @Test

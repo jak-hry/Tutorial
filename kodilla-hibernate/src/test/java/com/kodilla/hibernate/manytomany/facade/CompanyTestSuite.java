@@ -39,9 +39,9 @@ public class CompanyTestSuite {
         int company3Id = company3.getId();
 
         //When
-        List<Company> resultList1 = search.getCompanyByNameFragment("%" + "no" + "%");
-        List<Company> resultList2 = search.getCompanyByNameFragment("%" + "red" + "%");
-        List<Company> resultList3 = search.getCompanyByNameFragment("%" + "i" + "%");
+        List<Company> resultList1 = search.getCompanyByNameFragment("no");
+        List<Company> resultList2 = search.getCompanyByNameFragment("red");
+        List<Company> resultList3 = search.getCompanyByNameFragment("i");
 
         //Then
         try {
@@ -77,9 +77,9 @@ public class CompanyTestSuite {
         int employee3Id = employee3.getId();
 
         //When
-        List<Employee> resultList1 = search.getEmployeeByLastNameFragment("%" + "th" + "%");
-        List<Employee> resultList2 = search.getEmployeeByLastNameFragment("%" + "will" + "%");
-        List<Employee> resultList3 = search.getEmployeeByLastNameFragment("%" + "a" + "%");
+        List<Employee> resultList1 = search.getEmployeeByLastNameFragment("th");
+        List<Employee> resultList2 = search.getEmployeeByLastNameFragment("will");
+        List<Employee> resultList3 = search.getEmployeeByLastNameFragment("a");
 
         //Then
         try {
