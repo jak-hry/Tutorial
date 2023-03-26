@@ -31,6 +31,6 @@ public class TaskQueueTestSuite {
         //When
         //Then
         assertEquals(5, mentor1.getUpdateCount());
-//        assertEquals(3, mentor2.getUpdateCount());
+        assertEquals(3, mentor2.getUpdateCount());
     }
 }
