@@ -27,8 +27,10 @@ public class LibraryTestSuite {
         books.add(book4);
         books.add(book5);
         MedianAdapter medianAdapter = new MedianAdapter();
+
         //When
         int medianResult = medianAdapter.publicationYearMedian(books);
+
         //Then
         assertEquals(1970, medianResult);
         assertEquals(5, books.size());
