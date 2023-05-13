@@ -32,13 +32,13 @@ public class CrudAppTestSuite {
         driver.close();
     }
 
-//    @Test
-//    public void shouldCreateTrelloCard() throws InterruptedException {
-//        String taskName = createCrudAppTestTask();
-//        sendTestTaskToTrello(taskName);
-//        assertTrue(checkTaskExistsInTrello(taskName));
-//        deleteCrudAppTestTask(taskName);
-//    }
+    @Test
+    public void shouldCreateTrelloCard() throws InterruptedException {
+        String taskName = createCrudAppTestTask();
+        sendTestTaskToTrello(taskName);
+        assertTrue(checkTaskExistsInTrello(taskName));
+        deleteCrudAppTestTask(taskName);
+    }
 
     private String createCrudAppTestTask() throws InterruptedException {
         final String XPATH_TASK_NAME = "/html/body/main/section[1]/form/fieldset[1]/input";
@@ -73,7 +73,7 @@ public class CrudAppTestSuite {
                 .forEach(theForm -> {
                     WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
                     Select select = new Select(selectElement);
-                    select.selectByIndex(1);
+                    select.selectByIndex(2);
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
                     WebElement buttonCreateCard =
                             theForm.findElement(By.xpath(".//button[contains(@class, 'card-creation')]"));
@@ -101,7 +101,7 @@ public class CrudAppTestSuite {
         Thread.sleep(4000);
 
         driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
-                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Kodilla Application\"]")).size() > 0)
+                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Witaj w Trello!\"]")).size() > 0)
                 .forEach(WebElement::click);
 
         Thread.sleep(4000);
