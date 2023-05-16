@@ -90,13 +90,11 @@ public class CrudAppTestSuite {
         driverTrello.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driverTrello.findElement(By.id("user")).sendKeys("user");
         driverTrello.findElement(By.id("login")).click();
-        driverTrello.findElement(By.id("password")).sendKeys("password");
-        driverTrello.findElement(By.id("login")).click();
 
         Thread.sleep(4000);
 
         driverTrello.findElement(By.id("password")).sendKeys("password");
-        driverTrello.findElement(By.id("login-submit")).submit();
+        driverTrello.findElement(By.id("login")).submit();
 
         Thread.sleep(4000);
 
